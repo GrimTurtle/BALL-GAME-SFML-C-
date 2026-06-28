@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # C++ SFML Workspace Setup
 
 This workspace is configured for MSYS2 UCRT64 + SFML with VS Code.
@@ -32,3 +33,6 @@ Then run or debug with:
 - Make sure `MSYS2_UCRT64` is set in Windows system environment variables.
 - If SFML apps fail at runtime, copy the DLLs from `C:\msys64\ucrt64\bin` into the output folder or add that path to `PATH`.
 - Use this same workspace for other C++ files; the task and debugger are reusable.
+=======
+"# BALL-GAME-SFML-C-" 
+>>>>>>> cf50daa62c57198f6eeacd294733634087a417e7

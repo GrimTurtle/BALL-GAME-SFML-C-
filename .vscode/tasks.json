@@ -1,0 +1,44 @@
+{
+    "tasks": [
+        {
+            "label": "Build SFML app",
+            "type": "shell",
+            "command": "powershell.exe",
+            "args": [
+                "-NoProfile",
+                "-Command",
+                "& { & 'C:\\msys64\\ucrt64\\bin\\g++.exe' -fdiagnostics-color=always -g @(Get-ChildItem -Path '${workspaceFolder}' -Filter '*.cpp' | ForEach-Object { $_.FullName }) -o '${workspaceFolder}\\app.exe' -I 'C:\\msys64\\ucrt64\\include' -L 'C:\\msys64\\ucrt64\\lib' -lsfml-graphics -lsfml-window -lsfml-system }"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "Build all C++ source files in the workspace into app.exe"
+        },
+        {
+            "label": "Build active SFML file",
+            "type": "shell",
+            "command": "powershell.exe",
+            "args": [
+                "-NoProfile",
+                "-Command",
+                "& { & 'C:\\msys64\\ucrt64\\bin\\g++.exe' -fdiagnostics-color=always -g '${file}' -o '${fileDirname}\\${fileBasenameNoExtension}.exe' -I 'C:\\msys64\\ucrt64\\include' -L 'C:\\msys64\\ucrt64\\lib' -lsfml-graphics -lsfml-window -lsfml-system }"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Build only the active .cpp file into an executable in its folder"
+        }
+    ],
+    "version": "2.0.0"
+}
